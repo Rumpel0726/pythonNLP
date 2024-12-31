@@ -65,10 +65,6 @@ class ParseObj:
 #
 # print("https://www.yarnews.net" + hr)
 
-if __name__ == "__main__":
-    parseobj = ParseObj()
-
-    parseobj.parse_main('https://www.yarnews.net/news/bymonth/2014/12/0/')
 
 
 
