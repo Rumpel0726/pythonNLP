@@ -43,6 +43,7 @@ class ParseObj:
         return content
 
 
+
 # url = 'https://www.yarnews.net/news/bymonth/2014/12/0/'
 # response = requests.get(url)
 # html_content = response.content

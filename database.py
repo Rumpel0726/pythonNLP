@@ -5,6 +5,7 @@ class DBObj:
     def __init__(self):
         self.conn = sqlite3.connect("resources/news.db")
         self.c = self.conn.cursor()
+        self.current_line = -1
         self.records = []
         
 
@@ -33,16 +34,28 @@ class DBObj:
         self.conn.commit()
 
     def get_next_line(self):
-        if not hasattr(self, 'current_line'):
-            self.current_line = 0
-            self.records_fill()
+        if not self.records:
+            return None
             
         if self.current_line < len(self.records):
-            record = self.records[self.current_line]
             self.current_line += 1
-            return record
-        else:
+        record = self.records[self.current_line]
+        print(self.current_line)
+            
+        return record
+        
+    def get_prev_line(self):
+        if not self.records:
             return None
+           
+        if self.current_line > 0:
+            self.current_line -= 1
+        record = self.records[self.current_line]
+        print(self.current_line)
+        
+        return record
+
+
 
 
 # Пример использования класса
